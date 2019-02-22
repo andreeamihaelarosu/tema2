@@ -17,6 +17,7 @@ public class App
     	server.createContext("/DisplayBooks", new MyHtmlHandler2());
     	server.createContext("/TableParams", new MyHtmlHandler3());
     	server.createContext("/ExportParams", new MyHtmlHandler4());
+    	server.createContext("/Login", new MyStringHandler());
     	server.setExecutor(null); //create default executor
     	server.start(); //start the server
     	System.out.println("Server started at port 8001 ");
