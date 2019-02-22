@@ -17,7 +17,8 @@ public class MyHtmlHandler3 implements HttpHandler{
 		//parse key=value params
 		String response;
 		if (t.getRequestURI().getQuery() == null) { 
-			response = "There are no parameters"; 
+			response = "<html><body><h3>There are no parameters to export</h3>" + 
+    				"<p><a href=\"http://localhost:8001/\">Home</a></p></body></html>";
 	    }
 	        else {
 	        	String URI = t.getRequestURI().getQuery().toString(); 

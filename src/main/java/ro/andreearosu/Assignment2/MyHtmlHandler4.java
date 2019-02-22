@@ -28,7 +28,7 @@ public class MyHtmlHandler4 implements HttpHandler{
 	        	System.out.println(URI);
 	        	Map<String, String> m = getQueryParameters(URI);
 	        	//set response
-	        	response = "<html><body><h3>Parameters have been exported to /Assignment2/misc </h3>" + 
+	        	response = "<html><body><h3>Parameters have been exported to /Assignment2/misc/smth.txt </h3>" + 
 	        				"<p><a href=\"http://localhost:8001/\">Home</a></p></body></html>";
 	        }
 		t.sendResponseHeaders(200, response.length()); //send response headers. must be called before next step
