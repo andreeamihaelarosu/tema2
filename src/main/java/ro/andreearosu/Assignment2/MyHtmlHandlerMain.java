@@ -2,6 +2,7 @@ package ro.andreearosu.Assignment2;
 
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,5 +43,17 @@ public class MyHtmlHandlerMain implements HttpHandler{
 	        System.out.println("Key: " + keyValuePair[0] + "-> Value: "+ keyValuePair[1]);
 	    }
 	    return queryParameters;    
+	}
+	
+	//generate html of table with params
+	public String getHtmlTable(ArrayList<String[]> m) {
+		String link = "<html><body><table style=\"width:40%\" border=\"1px solid black\"><tr><th>ID</th><th>Name</th><th>Email</th><th>Phone no</th></tr>";
+		for (String[] entry: m)
+		{
+			link = link + "<tr><td>" + entry[0] + "</td><td>"+ entry[1]+ "</td><td>" + entry[2] + "</td><td>" + entry[3] + "</td></tr>";
+		}
+		link = link + "</table></body></html>";
+		
+		return link;
 	}
 }

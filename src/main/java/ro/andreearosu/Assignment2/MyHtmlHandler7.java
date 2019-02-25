@@ -35,7 +35,7 @@ public class MyHtmlHandler7 implements HttpHandler{
 	    	try {
 				ArrayList<String[]> table = dbc.selectToHtml("users");
 				dbc.closeConn();
-				response = "<html><body><h2>Here is the USERS database: </h2>"+ getHtmlTable(table)+"<br><br>" + 
+				response = "<html><body><h2>Here is the USERS database: </h2>"+ h.getHtmlTable(table)+"<br><br>" + 
 	    				"<form action=\"/DatabaseOps/Insert\" method=\"GET\"><input type=\"submit\" value=\"Insert user\"></form>"+
 						"<p><a href=\"http://localhost:8001/DatabaseOps\">Back</a></p></body></html>";
 
@@ -56,16 +56,4 @@ public class MyHtmlHandler7 implements HttpHandler{
 		os.close();
 	}
 	
-	//generate html of table with params
-		public static String getHtmlTable(ArrayList<String[]> m) {
-			
-			String link = "<html><body><table style=\"width:40%\" border=\"1px solid black\"><tr><th>ID</th><th>Name</th><th>Email</th><th>Phone no</th></tr>";
-			for (String[] entry: m)
-			{
-				link = link + "<tr><td>" + entry[0] + "</td><td>"+ entry[1]+ "</td><td>" + entry[2] + "</td><td>" + entry[3] + "</td></tr>";
-			}
-			link = link + "</table></body></html>";
-			
-			return link;
-		}
 }

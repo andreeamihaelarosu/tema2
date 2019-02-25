@@ -8,6 +8,7 @@ import java.sql.Driver;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 
 import org.apache.derby.jdbc.EmbeddedDriver;
@@ -27,16 +28,16 @@ public class DBConnection {
 
 	public DBConnection() {
 		try {
-			System.out.println("Trying to create table <users>");
 			Driver derbyEmbeddedDriver = new EmbeddedDriver();
 			DriverManager.registerDriver(derbyEmbeddedDriver);
 			connect = DriverManager.getConnection("jdbc:derby:userDB;create=true",
 					"sqluser","pass123");
 			connect.setAutoCommit(false);
 			Statement stmt = connect.createStatement();
+			/*System.out.println("Trying to create table <users>");
 			//stmt.execute(createTable);
 			System.out.println("Table <users> has been created");
-			/*PreparedStatement prepStatement = connect.prepareStatement(insertIntoTable);
+			PreparedStatement prepStatement = connect.prepareStatement(insertIntoTable);
 			prepStatement.setString(1, "Andreea Red");
 			prepStatement.setString(2, "smth@domail.com");
 			prepStatement.setString(3, "0765432187");
@@ -73,7 +74,7 @@ public class DBConnection {
 			String user = resultSet.getString("name");
 			String email = resultSet.getString("email");
 			String phone = resultSet.getString("phone");
-			System.out.println("Username: " + user + ", Email address: " + email+ ", Phone no: " + phone);
+			//System.out.println("Username: " + user + ", Email address: " + email+ ", Phone no: " + phone);
 		}
 	resultSet.close();
 	}
@@ -81,13 +82,23 @@ public class DBConnection {
 	public ArrayList<String[]> selectToHtml(String dbTable) throws Exception {
 		ArrayList<String[]> table = new ArrayList<String[]>();
 		statement = connect.createStatement();
+		//String responsec = "";
 		resultSet = statement.executeQuery("select * from " + dbTable);
+		ResultSetMetaData rsmd = resultSet.getMetaData();
+		int columnCount = rsmd.getColumnCount();
+		System.out.println("Select * from users;");
 		while (resultSet.next()) {
+			System.out.println("");
+			for (int x = 1; x<=columnCount; x++) { 
+				System.out.format("%20s", resultSet.getString(x) + "  |  " );
+				//responsec += resultSet.getString(x) + "  |  " ; 
+			}
+			System.out.println("");
 			String id = "" + resultSet.getInt("id");
 			String name = resultSet.getString("name").replace("+", " ");
 			String email = resultSet.getString("email");
 			String phone = resultSet.getString("phone");
-			System.out.println("Username: " + name + ", Email address: " + email+ ", Phone no: " + phone);
+			//System.out.println("Username: " + name + ", Email address: " + email+ ", Phone no: " + phone);
 			String[] row = {id, name, email, phone};
 			table.add(row);
 		}
