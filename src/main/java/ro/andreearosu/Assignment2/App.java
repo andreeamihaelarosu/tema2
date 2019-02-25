@@ -21,6 +21,7 @@ public class App
     	server.createContext("/DatabaseOps/Insert/InsertMsg", new MyHtmlHandler7());
     	server.createContext("/DatabaseOps/Display", new MyHtmlHandler8());
     	server.createContext("/DatabaseOps/Delete", new MyHtmlHandler9());
+    	server.createContext("/DatabaseOps/Delete/DeleteMsg", new MyHtmlHandler10());
     	server.setExecutor(null); //create default executor
     	server.start(); //start the server
     	System.out.println("Server started at port 8001 ");

@@ -144,8 +144,10 @@ public class DBConnection {
 	}
 	
 	public void DeleteFromDB(String dbTable, String referinta) throws SQLException{
-		preparedStatement = connect.prepareStatement("delete from " + dbTable +" where name = ?;");
+		preparedStatement = connect.prepareStatement("delete from " + dbTable +" where id = ?");
 		preparedStatement.setString(1,referinta);
 		preparedStatement.executeUpdate();
+		connect.commit();
+		preparedStatement.close();
 	}
 }

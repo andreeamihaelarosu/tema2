@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Mon Feb 25 14:04:11 EET 2019:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0169-248a-8239-000006dfac90 
+Mon Feb 25 14:35:23 EET 2019:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0169-24a7-134f-0000063321a0 
 on database directory C:\Users\andreea.rosu\eclipse-workspace\Assignment2\userDB with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
 Loaded from file:/C:/Users/andreea.rosu/.m2/repository/org/apache/derby/derby/10.14.2.0/derby-10.14.2.0.jar
 java.vendor=Oracle Corporation
@@ -12,8 +12,8 @@ os.version=10.0
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Mon Feb 25 14:04:11 EET 2019: Shutting down Derby engine
+Mon Feb 25 14:35:23 EET 2019: Shutting down Derby engine
 ----------------------------------------------------------------
-Mon Feb 25 14:04:11 EET 2019:
-Shutting down instance a816c00e-0169-248a-8239-000006dfac90 on database directory C:\Users\andreea.rosu\eclipse-workspace\Assignment2\userDB with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
+Mon Feb 25 14:35:23 EET 2019:
+Shutting down instance a816c00e-0169-24a7-134f-0000063321a0 on database directory C:\Users\andreea.rosu\eclipse-workspace\Assignment2\userDB with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
 ----------------------------------------------------------------
