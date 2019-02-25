@@ -2,8 +2,6 @@ package ro.andreearosu.Assignment2;
 
 import java.util.Map;
 import java.util.HashMap;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.ArrayUtils;
 import java.io.IOException;
 import java.io.OutputStream;
 import com.sun.net.httpserver.HttpExchange;
@@ -38,12 +36,13 @@ public class MyHtmlHandler3 implements HttpHandler{
 	public static Map<String, String> getQueryParameters(String queryString) {
 	    
 	    String[] parameters = queryString.split("&");
-	    Map<String, String> queryParameters = new HashMap();
+	    Map<String, String> queryParameters = new HashMap<String, String>();
 
 	    for (String parameter : parameters) {
 	        String[] keyValuePair = parameter.split("=");
+	        System.out.println(parameter);
 	        queryParameters.put(keyValuePair[0], keyValuePair[1]);
-	        System.out.println(queryParameters.get(keyValuePair[0]));
+	        System.out.println("Your " + keyValuePair[0] +" is " + keyValuePair[1]);
 	    }
 	    return queryParameters;    
 	}

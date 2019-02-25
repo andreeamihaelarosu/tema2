@@ -2,9 +2,6 @@ package ro.andreearosu.Assignment2;
 
 import java.util.Map;
 import java.util.HashMap;
-import org.apache.commons.lang3.StringUtils;
-import org.apache.commons.lang3.ArrayUtils;
-
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -17,7 +14,7 @@ public class MyHtmlHandler4 implements HttpHandler{
 	
 	public void handle(HttpExchange t) throws IOException{
 		
-		//parse key=value params
+		//parse key/value params
 		String response;
 		if (t.getRequestURI().getQuery() == null) { 
 			response = "<html><body><h3>There are no parameters to export</h3>" + 
@@ -26,8 +23,6 @@ public class MyHtmlHandler4 implements HttpHandler{
 	        else {
 	        	String URI = t.getRequestURI().getQuery().toString(); 
 	        	System.out.println(URI);
-	        	Map<String, String> m = getQueryParameters(URI);
-	        	//set response
 	        	response = "<html><body><h3>Parameters have been exported to /Assignment2/misc/smth.txt </h3>" + 
 	        				"<p><a href=\"http://localhost:8001/\">Home</a></p></body></html>";
 	        }
@@ -41,7 +36,7 @@ public class MyHtmlHandler4 implements HttpHandler{
 	public static Map<String, String> getQueryParameters(String queryString) throws IOException  {
 	    
 	    String[] parameters = queryString.split("&");
-	    Map<String, String> queryParameters = new HashMap();
+	    Map<String, String> queryParameters = new HashMap<String, String>();
 	    
 	    BufferedWriter bfwriter = new BufferedWriter(new FileWriter("misc/smth.txt",true));    	
 	    for (String parameter : parameters) {

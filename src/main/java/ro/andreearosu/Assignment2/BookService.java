@@ -7,16 +7,16 @@ public class BookService {
 
     public List<String> getAvailableGenres(BookGenre type){
 
-        List<String> genres = new ArrayList();
+        List<String> genres = new ArrayList<String>();
 
         if(type.equals(BookGenre.FANTASY)){
         	genres.add("The Chronicles of Narnia");
-        	genres.add(("Assassin's Apprentice"));
-        	genres.add(("His Dark Materials"));
-        	genres.add(("The Neverending Story"));
-        	genres.add(("Alanna: The First Adventur"));
-        	genres.add(("Tigana"));
-        	genres.add(("A Game of Thrones (A Song of Ice and Fire, #1)"));
+        	genres.add("Assassin's Apprentice");
+        	genres.add("His Dark Materials");
+        	genres.add("The Neverending Story");
+        	genres.add("Alanna: The First Adventur");
+        	genres.add("Tigana");
+        	genres.add("A Game of Thrones (A Song of Ice and Fire, #1)");
 
         } else if(type.equals(BookGenre.MYSTERY)){
         	genres.add("The Girl with the Dragon Tattoo (Millennium, #1)");

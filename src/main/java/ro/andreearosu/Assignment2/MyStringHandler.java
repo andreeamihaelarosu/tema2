@@ -9,7 +9,7 @@ import com.sun.net.httpserver.HttpHandler;
 public class MyStringHandler implements HttpHandler {
 	public void handle(HttpExchange t) throws IOException {
 		//set the response as a normal string
-		String response = "Login page is WIP :D";
+		String response = "User has been added.";
 		
 		//set headers and status code
 		t.sendResponseHeaders(200, response.length());
